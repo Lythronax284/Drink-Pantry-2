@@ -8,15 +8,15 @@
 import Foundation
 
 class User {
-    
+    var name: String
     var email: String
     var userId: String
-    // var drink objects
+    // var drinkObjects:
     
-    init(email: String, userId: String = UUID().uuidString) {
+    init(name: String, email: String, userId: String = UUID().uuidString) {
+        self.name = name
         self.email = email
         self.userId = userId
     }
-    
-    
+
 }
