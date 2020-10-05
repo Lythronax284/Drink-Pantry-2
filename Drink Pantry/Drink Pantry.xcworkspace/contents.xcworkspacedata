@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Drink Pantry/Base.lproj/Login.storyboard">
-   </FileRef>
-   <FileRef
       location = "group:Drink Pantry.xcodeproj">
    </FileRef>
    <FileRef
