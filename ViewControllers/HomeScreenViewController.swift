@@ -23,13 +23,23 @@ class HomeScreenViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         if let user = Auth.auth().currentUser {
-            UserController.sharedInstance.retrieveProfile(userId: user.uid) { (user) in
-                self.welcomeLabel.text = "Welcome, \(user?.name ?? "")"
+            UserController.sharedInstance.retrieveProfile(userId: user.uid) { (result) in
+                switch result {
+                case .success(let user):
+                    guard let user = user else { return }
+                    self.welcomeLabel.text = "Welcome, \(user.name)"
+                case .failure(let error):
+                    print("Unable to log in. \(error)")
+                }
             }
             
         } else {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let VC = storyboard.instantiateViewController(identifier: "login")
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let newController = SignUpViewController()
+//            self.addChild(newController)
+//            self.view.addSubview(newController.view)
+            let storyboard = UIStoryboard(name: "Login", bundle: nil)
+            guard let VC = storyboard.instantiateInitialViewController() else { return }
             VC.modalPresentationStyle = .fullScreen
             self.present(VC, animated: true, completion: nil)
         }
@@ -40,15 +50,23 @@ class HomeScreenViewController: UIViewController {
     @IBAction func signOutButtonTapped(_ sender: Any) {
         try? Auth.auth().signOut()
         if let user = Auth.auth().currentUser {
-            UserController.sharedInstance.retrieveProfile(userId: user.uid) { (user) in
-                self.welcomeLabel.text = "Welcome, \(user?.name ?? "")"
+            UserController.sharedInstance.retrieveProfile(userId: user.uid) { (result) in
+                switch result {
+                case .success(let user):
+                    guard let user = user else { return }
+                    self.welcomeLabel.text = "Welcome, \(user.name)"
+                case .failure(let error):
+                    print("Unable to log in. \(error)")
+                }
             }
             
         } else {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let VC = storyboard.instantiateViewController(identifier: "login")
+            
+            let storyboard = UIStoryboard(name: "Login", bundle: nil)
+            guard let VC = storyboard.instantiateInitialViewController() else { return }
             VC.modalPresentationStyle = .fullScreen
             self.present(VC, animated: true, completion: nil)
+            
         }
     }
     
