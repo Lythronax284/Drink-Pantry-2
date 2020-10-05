@@ -17,6 +17,8 @@
 		0E8C999F25226425008AB4BE /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8C999E25226425008AB4BE /* Drink.swift */; };
 		0E8C99A225238EB9008AB4BE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8C99A125238EB9008AB4BE /* User.swift */; };
 		0E8C99A5252390B2008AB4BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E8C99A4252390B2008AB4BE /* GoogleService-Info.plist */; };
+		0EBC6DAA25264AED0055CEDE /* CustomDrink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC6DA925264AED0055CEDE /* CustomDrink.swift */; };
+		0EBC6DAD252666480055CEDE /* CustomDrinkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC6DAC252666480055CEDE /* CustomDrinkController.swift */; };
 		12C0C687455F31A5407F9FAA /* Pods_Drink_Pantry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E5C68E6FC297D1D5FC346F /* Pods_Drink_Pantry.framework */; };
 		75F1042E2523C75D00DE40E0 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F1042D2523C75D00DE40E0 /* UserController.swift */; };
 		75F3FFA825252235008E17B6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F3FFA725252235008E17B6 /* LoginViewController.swift */; };
@@ -36,6 +38,8 @@
 		0E8C999E25226425008AB4BE /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 		0E8C99A125238EB9008AB4BE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0E8C99A4252390B2008AB4BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0EBC6DA925264AED0055CEDE /* CustomDrink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDrink.swift; sourceTree = "<group>"; };
+		0EBC6DAC252666480055CEDE /* CustomDrinkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDrinkController.swift; sourceTree = "<group>"; };
 		175BF02B2D29CE71048AFCBD /* Pods-Drink Pantry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Drink Pantry.debug.xcconfig"; path = "Target Support Files/Pods-Drink Pantry/Pods-Drink Pantry.debug.xcconfig"; sourceTree = "<group>"; };
 		75F1042D2523C75D00DE40E0 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		75F3FFA725252235008E17B6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 			children = (
 				0E8C999E25226425008AB4BE /* Drink.swift */,
 				0E8C99A125238EB9008AB4BE /* User.swift */,
+				0EBC6DA925264AED0055CEDE /* CustomDrink.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -130,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				75F1042D2523C75D00DE40E0 /* UserController.swift */,
+				0EBC6DAC252666480055CEDE /* CustomDrinkController.swift */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -291,6 +297,8 @@
 				0E8C99A225238EB9008AB4BE /* User.swift in Sources */,
 				0E873259252260F000A95B9D /* SceneDelegate.swift in Sources */,
 				75F3FFA825252235008E17B6 /* LoginViewController.swift in Sources */,
+				0EBC6DAA25264AED0055CEDE /* CustomDrink.swift in Sources */,
+				0EBC6DAD252666480055CEDE /* CustomDrinkController.swift in Sources */,
 				75F3FFAC25252263008E17B6 /* HomeScreenViewController.swift in Sources */,
 				75F1042E2523C75D00DE40E0 /* UserController.swift in Sources */,
 				0E8C999F25226425008AB4BE /* Drink.swift in Sources */,
