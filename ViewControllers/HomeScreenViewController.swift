@@ -18,6 +18,7 @@ class HomeScreenViewController: UIViewController {
         super.viewDidLoad()
         welcomeLabel.text = ""
         // Do any additional setup after loading the view.
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,6 +71,10 @@ class HomeScreenViewController: UIViewController {
         }
     }
     
+    @IBAction func whatever(_ sender: Any) {
+        
+        CustomDrinkController.sharedInstance.createCustomDrink(recipeTitle: "Jared's drink", recipeDescription: "carbonated citrus beverage", recipeIngredients: "sunshine", recipeInstructions: "enjoy", customDrinkPhoto: "string", prepTime: "none", difficulty: "hard")
+    }
     
 
     /*
