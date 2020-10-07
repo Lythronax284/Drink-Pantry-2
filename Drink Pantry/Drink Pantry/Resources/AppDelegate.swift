@@ -63,7 +63,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // ...
     }
 
+}
 
-
+extension AppDelegate: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if viewController is HomeScreenViewController {
+            let newVC = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(identifier: "mainNav")
+            tabBarController.present(newVC, animated: true, completion: nil)
+            return false
+        }
+        return true
+    }
 }
 

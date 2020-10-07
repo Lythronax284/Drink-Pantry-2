@@ -11,6 +11,7 @@
         <!--Home Screen View Controller-->
         <scene sceneID="uTG-dg-uob">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Vr-sc-DAD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="LpW-ab-GrZ" customClass="HomeScreenViewController" customModule="Drink_Pantry" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Aq4-4H-viw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -58,14 +59,13 @@
                         <outlet property="welcomeLabel" destination="jro-0v-cHS" id="0tV-63-1cn"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Vr-sc-DAD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1811.594202898551" y="36.830357142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="q1h-yx-bzT">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KTm-kb-ZEh" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="mainNav" automaticallyAdjustsScrollViewInsets="NO" id="KTm-kb-ZEh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xs4-33-cCK">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -79,14 +79,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MbV-I5-JVk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1090" y="37"/>
-        </scene>
-        <!--login-->
-        <scene sceneID="ggi-n6-uHT">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="login" storyboardName="Login" referencedIdentifier="login" id="HhN-ev-G5L" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jEl-Vb-Y8t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="370" y="37"/>
         </scene>
     </scenes>
     <resources>

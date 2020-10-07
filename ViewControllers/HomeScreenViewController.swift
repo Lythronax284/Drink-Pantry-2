@@ -35,10 +35,6 @@ class HomeScreenViewController: UIViewController {
             }
             
         } else {
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let newController = SignUpViewController()
-//            self.addChild(newController)
-//            self.view.addSubview(newController.view)
             let storyboard = UIStoryboard(name: "Login", bundle: nil)
             guard let VC = storyboard.instantiateInitialViewController() else { return }
             VC.modalPresentationStyle = .fullScreen
