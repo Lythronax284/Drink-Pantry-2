@@ -196,7 +196,8 @@
 				75F1042D2523C75D00DE40E0 /* UserController.swift */,
 				0EBC6DAC252666480055CEDE /* CustomDrinkController.swift */,
 			);
-			path = ModelControllers;
+			name = ModelControllers;
+			path = "Drink Pantry/Drink Pantry/Controllers/ModelControllers";
 			sourceTree = "<group>";
 		};
 		75F3FFA5252521B0008E17B6 /* Controllers */ = {
@@ -217,7 +218,8 @@
 				75421FD72526701900A8A891 /* SignUpViewController.swift */,
 				75A75ED7252E5C9800B5F678 /* TheHubViewController.swift */,
 			);
-			path = ViewControllers;
+			name = ViewControllers;
+			path = "Drink Pantry/Drink Pantry/Controllers/ViewControllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

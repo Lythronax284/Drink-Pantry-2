@@ -52,7 +52,7 @@ class LoginViewController: UIViewController {
                 UserController.sharedInstance.retrieveProfile(userId: user.uid) { (result) in
                     switch result {
                     case .success(let user):
-                        print("\(user?.name) was successfully signed in.")
+                        print("\(user?.name ?? "") was successfully signed in.")
                         self.dismiss(animated: true, completion: nil)
                     case .failure(let error):
                         print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
