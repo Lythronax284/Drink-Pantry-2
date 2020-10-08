@@ -11,7 +11,8 @@ import GoogleSignIn
 
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
+//	GIDSignInDelegate
 
 
 
@@ -45,30 +46,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         return GIDSignIn.sharedInstance().handle(url)
     }
     
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-      // ...
-      if let error = error {
-        // ...
-        return
-      }
-
-      guard let authentication = user.authentication else { return }
-      let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                        accessToken: authentication.accessToken)
-      // ...
-    }
-
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        // Perform any operations when the user disconnects from app here.
-        // ...
-    }
+//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+//      // ...
+//      if let error = error {
+//        // ...
+//        return
+//      }
+//
+//      guard let authentication = user.authentication else { return }
+//      let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+//                                                        accessToken: authentication.accessToken)
+//      // ...
+//    }
+//
+//    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+//        // Perform any operations when the user disconnects from app here.
+//        // ...
+//    }
 
 }
+
 
 extension AppDelegate: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         if viewController is HomeScreenViewController {
-            let newVC = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(identifier: "mainNav")
+            let newVC = UIStoryboard(name: "theHub", bundle: .main).instantiateViewController(identifier: "theHub")
             tabBarController.present(newVC, animated: true, completion: nil)
             return false
         }

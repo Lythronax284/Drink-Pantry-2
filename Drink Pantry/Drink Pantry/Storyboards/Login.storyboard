@@ -111,17 +111,17 @@
                         <outlet property="passwordTextField" destination="t9O-tQ-peP" id="dgQ-zu-Vry"/>
                         <outlet property="scrollView" destination="z7J-G9-B7c" id="gx3-0b-Jvs"/>
                         <outlet property="signInButton" destination="cGE-qC-Y7c" id="WS9-q6-Tov"/>
-                        <segue destination="ZtL-gc-Sec" kind="show" identifier="toHomeScreenVC" id="ocF-1x-Lat"/>
+                        <segue destination="ZtL-gc-Sec" kind="show" identifier="toHubVC" id="ocF-1x-Lat"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="inM-Fj-8zb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="855.07246376811599" y="36.830357142857139"/>
         </scene>
-        <!--Main-->
+        <!--theHub-->
         <scene sceneID="lYd-g2-DOx">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="ZtL-gc-Sec" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="theHub" id="ZtL-gc-Sec" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Ge3-DE-AWf"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wwu-U0-hzc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

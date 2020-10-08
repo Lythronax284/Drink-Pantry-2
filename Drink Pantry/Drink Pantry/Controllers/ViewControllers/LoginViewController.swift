@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
         super.viewWillAppear(true)
         
         if UserController.sharedInstance.currentUser != nil {
-            performSegue(withIdentifier: "toHomeScreenVC", sender: nil)
+            performSegue(withIdentifier: "toHubVC", sender: nil)
         }
     }
     

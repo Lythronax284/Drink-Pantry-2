@@ -43,7 +43,7 @@ class UserController {
             
             if let profile = snapshot?.data() {
                 // Profile was found, create new user
-                let userId = snapshot?.documentID as! String
+                let userId = snapshot?.documentID ?? ""
                 let email = profile["email"] as? String ?? ""
                 let name = profile["name"] as? String ?? ""
                 

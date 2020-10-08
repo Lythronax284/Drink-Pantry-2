@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0hI-iZ-SXc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
@@ -9,7 +9,7 @@
         <!--The Hub View Controller-->
         <scene sceneID="WhA-qx-gQu">
             <objects>
-                <tabBarController id="0hI-iZ-SXc" customClass="TheHubViewController" customModule="Drink_Pantry" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="theHub" id="0hI-iZ-SXc" customClass="TheHubViewController" customModule="Drink_Pantry" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6t2-0g-kde">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -25,13 +25,13 @@
             </objects>
             <point key="canvasLocation" x="-254" y="197"/>
         </scene>
-        <!--Main-->
+        <!--mainNav-->
         <scene sceneID="wMn-bf-UwV">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LYN-sa-CIE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewControllerPlaceholder storyboardName="Main" id="n9c-l3-FHf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="CH6-ph-gg6"/>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="mainNav" id="n9c-l3-FHf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="CH6-ph-gg6" userLabel="Main"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LYN-sa-CIE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="565" y="197"/>
         </scene>
@@ -39,7 +39,7 @@
         <scene sceneID="v79-cE-pH6">
             <objects>
                 <viewControllerPlaceholder storyboardName="Profile" id="hfh-In-nzt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="H6Y-yd-wq4"/>
+                    <tabBarItem key="tabBarItem" selectedImage="person.fill" catalog="system" id="H6Y-yd-wq4" userLabel="Profile"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VQg-HO-aZa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -49,11 +49,14 @@
         <scene sceneID="cav-21-fsY">
             <objects>
                 <viewControllerPlaceholder storyboardName="BrowseTab" id="lx0-Ne-Xtt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="qhL-Yf-vzP"/>
+                    <tabBarItem key="tabBarItem" title="Browse" id="qhL-Yf-vzP" userLabel="Browse"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pnL-Np-N2e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="591" y="465"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+    </resources>
 </document>
