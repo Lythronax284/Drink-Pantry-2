@@ -11,7 +11,7 @@
         <!--Profile-->
         <scene sceneID="woi-JQ-rC0">
             <objects>
-                <viewController id="9gP-qZ-0cG" sceneMemberID="viewController">
+                <viewController title="Profile" id="9gP-qZ-0cG" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QFB-1k-AJt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

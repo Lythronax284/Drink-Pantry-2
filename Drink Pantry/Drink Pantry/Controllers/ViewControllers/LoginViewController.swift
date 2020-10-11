@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FirebaseUI
+//import FirebaseUI
 import Firebase
 import FirebaseAuth
 
@@ -19,24 +19,33 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     
-
+	let vcIdentifier = "toHub"
+//	var handle: AuthStateDidChangeListenerHandle?
     override func viewDidLoad() {
         super.viewDidLoad()
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+		//handle =
+		Auth.auth().addStateDidChangeListener() { auth, user in
+			if Auth.auth().currentUser != nil {
+				self.performSegue(withIdentifier: self.vcIdentifier, sender: nil)
+				self.emailTextField.text = nil
+				self.passwordTextField.text = nil
+			}
+		}
         emailTextField.delegate = self
         passwordTextField.delegate = self
-        // Do any additional setup after loading the view.
+
     }
+//	override func viewWillDisappear(_ animated: Bool) {
+//		super.viewWillDisappear(animated)
+//
+//		Auth.auth().removeStateDidChangeListener(handle!)
+//
+//	}
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        if UserController.sharedInstance.currentUser != nil {
-            performSegue(withIdentifier: "toHubVC", sender: nil)
-        }
-    }
+
     
     // MARK: - Actions
     @IBAction func signInButtonTapped(_ sender: Any) {
@@ -53,7 +62,7 @@ class LoginViewController: UIViewController {
                     switch result {
                     case .success(let user):
                         print("\(user?.name ?? "") was successfully signed in.")
-                        self.dismiss(animated: true, completion: nil)
+//                        self.dismiss(animated: true, completion: nil)
                     case .failure(let error):
                         print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
                     }
@@ -63,11 +72,8 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
-        let signUpStoryboard = UIStoryboard(name: "SignUp", bundle: nil)
-        guard let signUpViewController = signUpStoryboard.instantiateInitialViewController() else { return }
-        self.navigationController?.pushViewController(signUpViewController, animated: true)
-        
-    }
+		print("I was tapped")
+	}
     
     
     
@@ -97,12 +103,7 @@ class LoginViewController: UIViewController {
             self.signInButton.isEnabled = false
             self.signInButton.setTitleColor(.gray, for: .normal)
         }
-    }
-    
-    // MARK: - Navigation
-   
-    
-
+	}
 }
 
 extension LoginViewController: UITextFieldDelegate {
