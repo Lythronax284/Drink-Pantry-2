@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WTp-xy-hJd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LEg-DI-sJe">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
@@ -8,16 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--Login-->
         <scene sceneID="vdX-Gn-BZp">
             <objects>
-                <viewController storyboardIdentifier="login" id="LEg-DI-sJe" customClass="LoginViewController" customModule="Drink_Pantry" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" modalPresentationStyle="fullScreen" id="LEg-DI-sJe" customClass="LoginViewController" customModule="Drink_Pantry" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YwW-RL-aJ9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z7J-G9-B7c">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="D9i-Fv-P6k">
                                         <rect key="frame" x="32" y="399" width="352" height="229"/>
@@ -63,7 +63,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Y0G-wm-vbh">
-                                        <rect key="frame" x="72.5" y="256" width="269" height="30"/>
+                                        <rect key="frame" x="72.5" y="271.5" width="269" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hw0-Of-gg9">
                                                 <rect key="frame" x="0.0" y="0.0" width="188.5" height="30"/>
@@ -76,6 +76,7 @@
                                                 <state key="normal" title="Sign Up"/>
                                                 <connections>
                                                     <action selector="signUpButtonTapped:" destination="LEg-DI-sJe" eventType="touchUpInside" id="axe-xz-nrI"/>
+                                                    <segue destination="fep-Je-1oI" kind="show" id="0sw-f1-zIj"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -105,46 +106,38 @@
                             <constraint firstItem="z7J-G9-B7c" firstAttribute="leading" secondItem="kqZ-hz-pCk" secondAttribute="leading" id="rcB-k4-4eO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Rvk-Mu-0BC"/>
+                    <navigationItem key="navigationItem" title="Login" id="Rvk-Mu-0BC"/>
                     <connections>
                         <outlet property="emailTextField" destination="zE7-HI-lfr" id="LpX-Ja-3LL"/>
                         <outlet property="passwordTextField" destination="t9O-tQ-peP" id="dgQ-zu-Vry"/>
                         <outlet property="scrollView" destination="z7J-G9-B7c" id="gx3-0b-Jvs"/>
                         <outlet property="signInButton" destination="cGE-qC-Y7c" id="WS9-q6-Tov"/>
-                        <segue destination="ZtL-gc-Sec" kind="show" identifier="toHubVC" id="ocF-1x-Lat"/>
+                        <segue destination="ZtL-gc-Sec" kind="show" identifier="toHub" id="ocF-1x-Lat"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="inM-Fj-8zb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="855.07246376811599" y="36.830357142857139"/>
         </scene>
+        <!--signUpVC-->
+        <scene sceneID="pd4-DW-Uvh">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="signUpVC" storyboardName="SignUp" referencedIdentifier="signUpVC" id="fep-Je-1oI" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="weh-Al-db1"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="btk-2I-bqT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1466" y="-26"/>
+        </scene>
         <!--theHub-->
         <scene sceneID="lYd-g2-DOx">
             <objects>
-                <viewControllerPlaceholder storyboardName="theHub" id="ZtL-gc-Sec" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="theHub" storyboardName="theHub" id="ZtL-gc-Sec" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Ge3-DE-AWf"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wwu-U0-hzc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1474" y="129"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Dn9-WA-E5f">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WTp-xy-hJd" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Y0y-Vr-tY3">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="LEg-DI-sJe" kind="relationship" relationship="rootViewController" id="pv6-Mr-CwM"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="N29-nl-JGD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-55.072463768115945" y="36.830357142857139"/>
         </scene>
     </scenes>
     <resources>

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseAuth
 
 class SignUpViewController: UIViewController {
@@ -46,13 +47,14 @@ class SignUpViewController: UIViewController {
         } else {
             guard let nameText = nameTextField.text, !nameText.isEmpty, let emailText = emailTextField.text, !emailText.isEmpty, let passwordText = passwordTextField.text, !passwordText.isEmpty else { return }
            
-            Auth.auth().createUser(withEmail: emailText, password: passwordText) { (user, error) in
+			UserController.sharedInstance.createUser(name: <#T##String#>, email: <#T##String#>, UUID: <#T##String#>, completion: <#T##(Result<Bool, LoginError>) -> Void#>) { (user, error) in
                 if let error = error {
                     print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
             }
            
                 if let user = user?.user {
                     UserController.sharedInstance.createUser(name: nameText, email: emailText, UUID: user.uid) { success in
+						self.performSegue(withIdentifier: "theHub", sender: nil)
                         self.dismiss(animated: true)
                     }
                 }
@@ -78,17 +80,7 @@ class SignUpViewController: UIViewController {
       }
       scrollView.scrollIndicatorInsets = scrollView.contentInset
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

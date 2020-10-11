@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import FirebaseFirestore
 import Firebase
+import FirebaseFirestore
 
 class UserController {
     
@@ -16,27 +16,27 @@ class UserController {
     
     // MARK: - Current User
     var currentUser: User?
+	private static let db = Firestore.firestore()
     
-    func createUser(name: String, email: String, UUID: String, completion: @escaping(Bool) -> Void) {
-        let newUser = User(name: name, email: email, userId: UUID)
-        let db = Firestore.firestore()
-        
-        db.collection("users").document(newUser.userId).setData(["name": newUser.name, "email" : newUser.email, "userID": newUser.userId]) { (error) in
+	func createUser(name: String, email: String, completion: @escaping(Result<Bool, LoginError>) -> Void) {
+        let newUser = User(name: name, email: email)
+        //["name": newUser.name, "email" : newUser.email, "userID": newUser.userId]
+		UserController.db.collection("users").document(newUser.userId).se { (error) in
             if let error = error {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
-                completion(false)
+				completion(.failure(.thrownError(error)))
             }
             
             self.currentUser = newUser
-            completion(true)
+			print("Successfully created User. \(newUser)")
+			completion(.success(true))
         }
     }
     
     func retrieveProfile(userId: String, completion: @escaping (Result<User?, LoginError>) -> Void) {
         
-        let db = Firestore.firestore()
         
-        db.collection("users").document(userId).getDocument { (snapshot, error) in
+		UserController.db.collection("users").document(userId).getDocument { (snapshot, error) in
             if let error = error {
                 return completion(.failure(LoginError.thrownError(error)))
             }

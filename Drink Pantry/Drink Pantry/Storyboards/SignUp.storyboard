@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Title-->
+        <!--Sign Up-->
         <scene sceneID="uXW-5o-8a2">
             <objects>
-                <viewController storyboardIdentifier="signUpVC" id="m4Y-DB-RWK" customClass="SignUpViewController" customModule="Drink_Pantry" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signUpVC" modalPresentationStyle="fullScreen" id="m4Y-DB-RWK" customClass="SignUpViewController" customModule="Drink_Pantry" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xD6-tU-dCE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,6 +111,7 @@
                                                                 <state key="normal" title="Sign Up"/>
                                                                 <connections>
                                                                     <action selector="signUpButtonTapped:" destination="m4Y-DB-RWK" eventType="touchUpInside" id="7ry-5A-mZf"/>
+                                                                    <segue destination="sbH-aT-Mtc" kind="show" identifier="theHub" id="Pkp-Bd-pnb"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -146,7 +147,7 @@
                             <constraint firstItem="3N6-bS-o3V" firstAttribute="top" secondItem="PTo-z8-349" secondAttribute="top" id="wav-bS-zmQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="sGf-0P-1Hf"/>
+                    <navigationItem key="navigationItem" title="Sign Up" id="sGf-0P-1Hf"/>
                     <connections>
                         <outlet property="SignUpButton" destination="icT-7C-hXG" id="hz3-3U-HH7"/>
                         <outlet property="confirmPasswordTextField" destination="UYi-ry-I83" id="BhO-HM-q3T"/>
@@ -159,6 +160,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xW0-83-6jF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2121.739130434783" y="135.9375"/>
+        </scene>
+        <!--theHub-->
+        <scene sceneID="PMC-eH-md0">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="theHub" storyboardName="theHub" id="sbH-aT-Mtc" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="bC1-PK-2cZ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GW2-3i-Isv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2952" y="164"/>
         </scene>
     </scenes>
     <resources>

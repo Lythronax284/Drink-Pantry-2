@@ -67,14 +67,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 
-extension AppDelegate: UITabBarControllerDelegate {
-    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        if viewController is HomeScreenViewController {
-            let newVC = UIStoryboard(name: "theHub", bundle: .main).instantiateViewController(identifier: "theHub")
-            tabBarController.present(newVC, animated: true, completion: nil)
-            return false
-        }
-        return true
-    }
-}
-
