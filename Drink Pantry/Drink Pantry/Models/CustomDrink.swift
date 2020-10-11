@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class CustomDrink {
+class CustomDrink: Codable {
     
     
     var recipeTitle: String
