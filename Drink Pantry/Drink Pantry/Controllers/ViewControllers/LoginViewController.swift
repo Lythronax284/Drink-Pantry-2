@@ -20,14 +20,13 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     
 	let vcIdentifier = "toHub"
-//	var handle: AuthStateDidChangeListenerHandle?
+	var handle: AuthStateDidChangeListenerHandle?
     override func viewDidLoad() {
         super.viewDidLoad()
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-		//handle =
-		Auth.auth().addStateDidChangeListener() { auth, user in
+		handle = Auth.auth().addStateDidChangeListener() { auth, user in
 			if Auth.auth().currentUser != nil {
 				self.performSegue(withIdentifier: self.vcIdentifier, sender: nil)
 				self.emailTextField.text = nil
@@ -38,12 +37,12 @@ class LoginViewController: UIViewController {
         passwordTextField.delegate = self
 
     }
-//	override func viewWillDisappear(_ animated: Bool) {
-//		super.viewWillDisappear(animated)
-//
-//		Auth.auth().removeStateDidChangeListener(handle!)
-//
-//	}
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+
+		Auth.auth().removeStateDidChangeListener(handle!)
+
+	}
     
 
     
@@ -62,7 +61,9 @@ class LoginViewController: UIViewController {
                     switch result {
                     case .success(let user):
                         print("\(user?.name ?? "") was successfully signed in.")
-//                        self.dismiss(animated: true, completion: nil)
+						self.performSegue(withIdentifier: self.vcIdentifier, sender: nil)
+						self.emailTextField.text = nil
+						self.passwordTextField.text = nil
                     case .failure(let error):
                         print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
                     }

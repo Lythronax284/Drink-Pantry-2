@@ -19,7 +19,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var SignUpButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     
-
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 //        let notificationCenter = NotificationCenter.default
@@ -46,22 +46,11 @@ class SignUpViewController: UIViewController {
             print("Passwords do not match")
         } else {
             guard let nameText = nameTextField.text, !nameText.isEmpty, let emailText = emailTextField.text, !emailText.isEmpty, let passwordText = passwordTextField.text, !passwordText.isEmpty else { return }
-           
-			UserController.sharedInstance.createUser(name: <#T##String#>, email: <#T##String#>, UUID: <#T##String#>, completion: <#T##(Result<Bool, LoginError>) -> Void#>) { (user, error) in
-                if let error = error {
-                    print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
-            }
-           
-                if let user = user?.user {
-                    UserController.sharedInstance.createUser(name: nameText, email: emailText, UUID: user.uid) { success in
-						self.performSegue(withIdentifier: "theHub", sender: nil)
-                        self.dismiss(animated: true)
-                    }
-                }
-            }
+			print("______\(emailText)_____")
+			UserController.sharedInstance.createUser(name: nameText, email: emailText, password: passwordText) { users in
+				print("\(users) created Successfully!  Have a nice day")
+			}
         }
-        
-        
     }
     
     
