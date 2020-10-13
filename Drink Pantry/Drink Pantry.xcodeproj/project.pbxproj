@@ -248,7 +248,8 @@
 			children = (
 				FA31C9D72534CC7D008ACE84 /* DrinkAPIRoute.swift */,
 			);
-			path = APISerives;
+			name = APISerives;
+			path = "Drink Pantry/Drink Pantry/Controllers/APISerives";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
