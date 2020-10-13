@@ -25,7 +25,7 @@ class UserController {
 	//
 	//["name": newUser.name, "email" : newUser.email, "userID": newUser.userId]
 	func createUser(name: String, email: String, password: String, completion: @escaping(Result<User, LoginError>) -> Void) {
-		let newUser = User(name: name, email: email)
+		
 		Auth.auth().createUser(withEmail: email, password: password) { users, error in
 			print(users?.user ?? "Could not find Authed User")
 			if let error = error {
@@ -38,13 +38,14 @@ class UserController {
 				
 				do {
 					guard let userID = UserController.currentID else {return completion(.failure(.noData))}
+					let newUser = User(name: name, email: email, userId: userID)
 					try UserController.db.collection("users").document(userID).setData(from: newUser) { (error) in
 						if let error = error {
 							print("Save Data Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
 							completion(.failure(.thrownError(error)))
 						} else {
 							self.currentUser = newUser
-							print("Successfully created User. \(newUser)")
+							print("Successfully created User. \(newUser.name)")
 							completion(.success(newUser))
 						}
 					}
