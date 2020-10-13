@@ -15,7 +15,7 @@ class MyAccountTableViewController: UITableViewController {
     // MARK: - Properties
     var user: User? {
         didSet {
-            guard let user = user else { return }
+//            guard let user = user else { return }
             setupViews()
         }
     }

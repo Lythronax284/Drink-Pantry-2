@@ -31,11 +31,11 @@ class CustomDrinkController {
 	func createCustomDrink(recipeTitle: String, recipeDescription: String, recipeIngredients: String, recipeInstructions: String, customDrinkPhoto: String, prepTime: String, difficulty: String) {
 		let newCustomDrink = CustomDrink(recipeTitle: recipeTitle, recipeDescription: recipeDescription, recipeIngredients: recipeIngredients, recipeInstructions: recipeInstructions, customDrinkPhoto: customDrinkPhoto, prepTime: prepTime, difficulty: difficulty)
 		
-		guard let user = UserController.sharedInstance.currentUser else { return
+		guard let userID = UserController.sharedInstance.currentUser?.userId else { return
 		}
 		
 		
-		drinkRef.document(user.userId).collection("custom drinks").document(newCustomDrink.customDrinkID).setData(
+		drinkRef.document(userID).collection("custom drinks").document(newCustomDrink.customDrinkID).setData(
 			["recipe title": newCustomDrink.recipeTitle as Any,
 			 "recipe description": newCustomDrink.recipeDescription as Any,
 			 "recipe ingredients": newCustomDrink.recipeIngredients as Any,
@@ -49,9 +49,9 @@ class CustomDrinkController {
 	// MARK: - FETCH A DRINK
 	
 	func fetchUserCustomDrinks(completion: @escaping (Bool) -> Void) {
-		guard let user = UserController.sharedInstance.currentUser else { return
+		guard let userID = UserController.sharedInstance.currentUser?.userId else { return
 		}
-		drinkRef.document(user.userId).collection("custom drinks").addSnapshotListener { (querysnapshot, error) in
+		drinkRef.document(userID).collection("custom drinks").addSnapshotListener { (querysnapshot, error) in
 			
 			if let error = error {
 				print("Error in \(error)")
@@ -88,8 +88,8 @@ class CustomDrinkController {
 	// MARK: - DELETE A DRINK
 	
 	func deleteUserCustomDrink(drink: CustomDrink) {
-		guard let user = UserController.sharedInstance.currentUser else { return }
-		db.collection("users").document(user.userId).collection("custom drinks").document(drink.customDrinkID).delete()
+		guard let userID = UserController.sharedInstance.currentUser?.userId else { return }
+		db.collection("users").document(userID).collection("custom drinks").document(drink.customDrinkID).delete()
 		guard let index = CustomDrinkController.sharedInstance.customDrinks.firstIndex(of: drink) else { return }
 		customDrinks.remove(at: index)
 		print("\(drink.recipeTitle) was successfully deleted from the database.")
@@ -101,8 +101,8 @@ class CustomDrinkController {
 	
 	func updateUserCustomDrink(drink: CustomDrink) {
 		
-		guard let user = UserController.sharedInstance.currentUser else { return }
-		let drinkRef = db.collection("users").document(user.userId).collection("custom drinks").document(drink.customDrinkID)
+		guard let userID = UserController.sharedInstance.currentUser?.userId else { return }
+		let drinkRef = db.collection("users").document(userID).collection("custom drinks").document(drink.customDrinkID)
 		//        let drinkData = ["custom drink" : drink.customDrinkID, "recipe title" : drink.recipeTitle, "recipe description" : drink.recipeDescription, "recipeIngredients" : drink.recipeIngredients, "recipe instructions" : drink.recipeInstructions, "custom drink photo" : drink.customDrinkPhoto, "prep time" : drink.prepTime, "difficulty" : drink.difficulty, "custom drink ID" : drink.customDrinkID]
 		
 		do {

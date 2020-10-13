@@ -14,12 +14,13 @@ class HomeScreenViewController: UIViewController {
 	// MARK: - Outlets
 	@IBOutlet weak var welcomeLabel: UILabel!
 	
-	
+	var handle: AuthStateDidChangeListenerHandle?
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		let currentUser = Auth.auth().currentUser
-		guard let currentUserID = Auth.auth().currentUser?.uid else { return }
+//		let currentUser = Auth.auth().currentUser
+		handle = Auth.auth().addStateDidChangeListener({ (auth, currentUser ) in
 		if currentUser != nil {
+			guard let currentUserID = Auth.auth().currentUser?.uid else { return }
 			UserController.sharedInstance.retrieveProfile(userId: currentUserID) { (result) in
 				switch result {
 					case .success(let user):
@@ -31,8 +32,15 @@ class HomeScreenViewController: UIViewController {
 				}
 			}
 		}
+		})
 	}
 	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		
+		Auth.auth().removeStateDidChangeListener(handle!)
+		
+	}
 	
 	// MARK: - Actions
 	func showAlert(message:String) {

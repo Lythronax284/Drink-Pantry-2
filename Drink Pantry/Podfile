@@ -11,8 +11,7 @@ target 'Drink Pantry' do
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
   pod 'Firebase/Analytics'
-  pod 'FirebaseUI'
-  pod 'GoogleSignIn'
+  pod 'Firebase/Core'
 
 
 end
