@@ -19,7 +19,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="RuS-kl-NDq">
                                 <rect key="frame" x="82" y="331" width="250" height="234"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNd-a0-zqI">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNd-a0-zqI" customClass="PrimaryButton" customModule="Drink_Pantry" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="56"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="mK9-xi-Swf"/>
@@ -30,19 +30,20 @@
                                             <action selector="myCreationsButtonTapped:" destination="9gP-qZ-0cG" eventType="touchUpInside" id="whf-7c-HDS"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Q3-z8-hvy">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Q3-z8-hvy" customClass="PrimaryButton" customModule="Drink_Pantry" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="89" width="250" height="56"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="3kO-cE-osy"/>
                                             <constraint firstAttribute="width" constant="250" id="ZWp-Ue-wjB"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="My Account"/>
                                         <connections>
                                             <action selector="myAccountButtonTapped:" destination="9gP-qZ-0cG" eventType="touchUpInside" id="OqB-cd-rjs"/>
                                             <segue destination="vYy-SR-FPi" kind="show" identifier="toMyAccountVC" id="hiE-we-ESx"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLr-kA-V17">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLr-kA-V17" customClass="PrimaryButton" customModule="Drink_Pantry" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="178" width="250" height="56"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="36Y-B7-54m"/>
@@ -97,8 +98,8 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5J-Yb-w59">
                                                             <rect key="frame" x="0.0" y="0.0" width="88" height="20"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
+                                                            <fontDescription key="fontDescription" name="DevanagariSangamMN" family="Devanagari Sangam MN" pointSize="17"/>
+                                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(userEmail)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnQ-Xh-3Xz">
@@ -143,8 +144,8 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DcR-Px-PU5">
                                                             <rect key="frame" x="0.0" y="0.0" width="88" height="20"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
+                                                            <fontDescription key="fontDescription" name="DevanagariSangamMN" family="Devanagari Sangam MN" pointSize="17"/>
+                                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change  Password" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgh-Vj-BrT">
@@ -343,7 +344,7 @@
                                             <constraint firstItem="0bA-MF-IOO" firstAttribute="width" secondItem="35h-jh-Rws" secondAttribute="width" id="zYk-jB-PR2"/>
                                         </constraints>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97P-VI-WQm">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97P-VI-WQm" customClass="SecondaryButton" customModule="Drink_Pantry" customModuleProvider="target">
                                         <rect key="frame" x="51" y="124.5" width="250" height="56"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="0EX-dD-e12"/>

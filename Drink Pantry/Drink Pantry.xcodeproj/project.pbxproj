@@ -22,6 +22,9 @@
 		75421FD12526651C00A8A891 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75421FD02526651C00A8A891 /* SignUp.storyboard */; };
 		75421FD5252669E500A8A891 /* LoginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75421FD4252669E500A8A891 /* LoginError.swift */; };
 		75421FD82526701900A8A891 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75421FD72526701900A8A891 /* SignUpViewController.swift */; };
+		7548CE252534FC74004F21A5 /* Styleguide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7548CE242534FC74004F21A5 /* Styleguide.swift */; };
+		7586223C25377BAA006D14A8 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586223B25377BAA006D14A8 /* PrimaryButton.swift */; };
+		758622402537930B006D14A8 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586223F2537930B006D14A8 /* SecondaryButton.swift */; };
 		75A75ECD252E58D300B5F678 /* theHub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75A75ECC252E58D300B5F678 /* theHub.storyboard */; };
 		75A75ED0252E59EC00B5F678 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75A75ECF252E59EC00B5F678 /* Profile.storyboard */; };
 		75A75ED4252E5A0D00B5F678 /* BrowseTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75A75ED3252E5A0D00B5F678 /* BrowseTab.storyboard */; };
@@ -57,6 +60,9 @@
 		75421FD02526651C00A8A891 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		75421FD4252669E500A8A891 /* LoginError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginError.swift; sourceTree = "<group>"; };
 		75421FD72526701900A8A891 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		7548CE242534FC74004F21A5 /* Styleguide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styleguide.swift; sourceTree = "<group>"; };
+		7586223B25377BAA006D14A8 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		7586223F2537930B006D14A8 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		75A75ECC252E58D300B5F678 /* theHub.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = theHub.storyboard; sourceTree = "<group>"; };
 		75A75ECF252E59EC00B5F678 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		75A75ED3252E5A0D00B5F678 /* BrowseTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BrowseTab.storyboard; sourceTree = "<group>"; };
@@ -109,6 +115,7 @@
 		0E873255252260F000A95B9D /* Drink Pantry */ = {
 			isa = PBXGroup;
 			children = (
+				7548CE232534FC5A004F21A5 /* Styleguide */,
 				75421FD3252669D100A8A891 /* Helpers&Extensions */,
 				75F3FFA5252521B0008E17B6 /* Controllers */,
 				0E8C999D2522640B008AB4BE /* Models */,
@@ -179,6 +186,16 @@
 				FA31C9E32534CD15008ACE84 /* ImageError.swift */,
 			);
 			path = "Helpers&Extensions";
+			sourceTree = "<group>";
+		};
+		7548CE232534FC5A004F21A5 /* Styleguide */ = {
+			isa = PBXGroup;
+			children = (
+				7548CE242534FC74004F21A5 /* Styleguide.swift */,
+				7586223B25377BAA006D14A8 /* PrimaryButton.swift */,
+				7586223F2537930B006D14A8 /* SecondaryButton.swift */,
+			);
+			path = Styleguide;
 			sourceTree = "<group>";
 		};
 		75A75EC8252E545600B5F678 /* Profile */ = {
@@ -393,13 +410,16 @@
 				75421FD82526701900A8A891 /* SignUpViewController.swift in Sources */,
 				75A75F05252FA8BC00B5F678 /* ProfileLandingViewController.swift in Sources */,
 				0E873257252260F000A95B9D /* AppDelegate.swift in Sources */,
+				758622402537930B006D14A8 /* SecondaryButton.swift in Sources */,
 				75421FD5252669E500A8A891 /* LoginError.swift in Sources */,
+				7548CE252534FC74004F21A5 /* Styleguide.swift in Sources */,
 				0E8C99A225238EB9008AB4BE /* User.swift in Sources */,
 				0E873259252260F000A95B9D /* SceneDelegate.swift in Sources */,
 				FA31C9DC2534CCB3008ACE84 /* APIDrinkController.swift in Sources */,
 				FA31C9E42534CD15008ACE84 /* ImageError.swift in Sources */,
 				75F3FFA825252235008E17B6 /* LoginViewController.swift in Sources */,
 				75A75F11252FB0D800B5F678 /* EditAccountEmailViewController.swift in Sources */,
+				7586223C25377BAA006D14A8 /* PrimaryButton.swift in Sources */,
 				0EBC6DAA25264AED0055CEDE /* CustomDrink.swift in Sources */,
 				0EBC6DAD252666480055CEDE /* CustomDrinkController.swift in Sources */,
 				75F3FFAC25252263008E17B6 /* HomeScreenViewController.swift in Sources */,
