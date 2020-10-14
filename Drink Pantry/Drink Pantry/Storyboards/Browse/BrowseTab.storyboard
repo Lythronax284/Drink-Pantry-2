@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lzK-ml-J3u">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -10,10 +11,20 @@
         <!--Browse-->
         <scene sceneID="SsE-mA-WQq">
             <objects>
-                <viewController id="lzK-ml-J3u" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="lzK-ml-J3u" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="liQ-Fb-rIZ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GE0-4h-Wm0">
+                                <rect key="frame" x="183" y="433" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="My Bar"/>
+                                <connections>
+                                    <segue destination="w2F-rI-PA4" kind="show" id="tvl-lr-bla"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="p7c-12-qXe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -22,6 +33,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8i-rc-3c1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="664" y="946"/>
+        </scene>
+        <!--MyBar-->
+        <scene sceneID="Cui-WF-xa5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MyBar" id="w2F-rI-PA4" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="x49-2l-Jxf"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="12F-0Z-qEg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1260" y="883"/>
         </scene>
     </scenes>
     <resources>
