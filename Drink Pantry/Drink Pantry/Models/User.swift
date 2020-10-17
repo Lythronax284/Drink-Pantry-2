@@ -7,16 +7,23 @@
 
 import Foundation
 
-class User {
-    
+class User: Codable {
+    var name: String
     var email: String
-    var userId: String
-    // var drink objects
-    
-    init(email: String, userId: String = UUID().uuidString) {
+    var userId: String?
+    // var drinkObjects:
+    //userId: String = UUID().uuidString
+    init(name: String, email: String, userId: String = "") {
+        self.name = name
         self.email = email
         self.userId = userId
     }
-    
-    
+
+}
+extension User: Equatable {
+	static func == (lhs: User, rhs: User) -> Bool {
+		return lhs.userId == rhs.userId
+	}
+	
+	
 }

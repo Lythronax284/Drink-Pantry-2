@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0hI-iZ-SXc">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="WhA-qx-gQu">
+            <objects>
+                <tabBarController storyboardIdentifier="theHub" modalPresentationStyle="fullScreen" id="0hI-iZ-SXc" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6t2-0g-kde">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="dtr-R9-oMC" kind="relationship" relationship="viewControllers" id="R6M-3S-Gr7"/>
+                        <segue destination="hfh-In-nzt" kind="relationship" relationship="viewControllers" id="OVd-uw-cET"/>
+                        <segue destination="lx0-Ne-Xtt" kind="relationship" relationship="viewControllers" id="OHC-dn-LOd"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xu8-UK-A9d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-254" y="197"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="v79-cE-pH6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="hfh-In-nzt" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" id="H6Y-yd-wq4" userLabel="Profile">
+                        <imageReference key="image" image="person.fill" catalog="system" symbolScale="small" renderingMode="original"/>
+                        <imageReference key="selectedImage" image="person.fill" catalog="system" symbolScale="small" renderingMode="original"/>
+                    </tabBarItem>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VQg-HO-aZa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="572" y="-22"/>
+        </scene>
+        <!--homeScreen-->
+        <scene sceneID="Jmm-mX-euO">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HomeScreen" referencedIdentifier="homeScreen" id="dtr-R9-oMC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home Screen" id="dlN-2l-zLh">
+                        <imageReference key="image" image="homekit" catalog="system" symbolScale="small" renderingMode="original"/>
+                        <imageReference key="selectedImage" image="homekit" catalog="system" symbolScale="small" renderingMode="original"/>
+                    </tabBarItem>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UCX-BV-UyB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="560" y="206"/>
+        </scene>
+        <!--BrowseTab-->
+        <scene sceneID="cav-21-fsY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="BrowseTab" id="lx0-Ne-Xtt" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Browse" id="qhL-Yf-vzP" userLabel="Browse">
+                        <imageReference key="image" image="folder.fill" catalog="system" symbolScale="small" renderingMode="original"/>
+                        <imageReference key="selectedImage" image="folder.fill" catalog="system" symbolScale="small" renderingMode="original"/>
+                    </tabBarItem>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pnL-Np-N2e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="591" y="465"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="folder.fill" catalog="system" width="128" height="97"/>
+        <image name="homekit" catalog="system" width="128" height="106"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+    </resources>
+</document>
